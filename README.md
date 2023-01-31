@@ -7,7 +7,9 @@ Here, I have implemented CNN (Convolution Neural Network) using Keras.
 2. OpenCV 3
 3. Tensorflow
 4. Keras
-
+5. scipy
+6. pillow
+7. opencv-python
 ### Running this project
 1. Install Python 3, Opencv 3, Tensorflow, Keras.
 2. First Train the model.

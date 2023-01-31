@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-
+import time
 def nothing(x):
     pass
 
@@ -11,7 +11,7 @@ classifier = load_model('Trained_model.h5')
 
 def predictor():
        import numpy as np
-       from keras.preprocessing import image
+       import keras.utils as image
        test_image = image.load_img('1.png', target_size=(64, 64))
        test_image = image.img_to_array(test_image)
        test_image = np.expand_dims(test_image, axis = 0)
@@ -91,7 +91,7 @@ img_counter = 0
 img_text = ''
 while True:
     ret, frame = cam.read()
-    frame = cv2.flip(frame,1)
+    frame = cv2.flip(frame,10)
     l_h = cv2.getTrackbarPos("L - H", "Trackbars")
     l_s = cv2.getTrackbarPos("L - S", "Trackbars")
     l_v = cv2.getTrackbarPos("L - V", "Trackbars")
@@ -119,10 +119,11 @@ while True:
     cv2.imwrite(img_name, save_img)
     print("{} written!".format(img_name))
     img_text = predictor()
-        
+    time.sleep(0.1)    
 
     if cv2.waitKey(1) == 27:
         break
+        
 
 
 cam.release()

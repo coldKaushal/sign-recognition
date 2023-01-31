@@ -11,18 +11,18 @@ from keras import optimizers
 classifier = Sequential()
 
 # Step 1 - Convolutio Layer 
-classifier.add(Convolution2D(32, 3,  3, input_shape = (64, 64, 3), activation = 'relu'))
+classifier.add(Convolution2D(32, 3,  3, input_shape = (64, 64, 3), activation = 'relu', padding="same"))
 
 #step 2 - Pooling
-classifier.add(MaxPooling2D(pool_size =(2,2)))
+classifier.add(MaxPooling2D(pool_size =(2,2), padding="same"))
 
 # Adding second convolution layer
-classifier.add(Convolution2D(32, 3,  3, activation = 'relu'))
-classifier.add(MaxPooling2D(pool_size =(2,2)))
+classifier.add(Convolution2D(32, 3,  3, activation = 'relu', padding="same"))
+classifier.add(MaxPooling2D(pool_size =(2,2), padding="same"))
 
 #Adding 3rd Concolution Layer
-classifier.add(Convolution2D(64, 3,  3, activation = 'relu'))
-classifier.add(MaxPooling2D(pool_size =(2,2)))
+classifier.add(Convolution2D(64, 3,  3, activation = 'relu', padding="same"))
+classifier.add(MaxPooling2D(pool_size =(2,2), padding="same"))
 
 
 #Step 3 - Flattening
